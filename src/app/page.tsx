@@ -15,7 +15,7 @@ export default function Home() {
         <p className="text-gray-300 mt-2 text-2xl">What our community has to say about DevMatch</p>
       </section>
       <Reviews />
-      <section className="text-center">
+      <section className="space-y-5 text-center">
         <h2 className="text-5xl font-bold text-slate-500">Some FAQs?</h2>
       </section>
       <Faq />

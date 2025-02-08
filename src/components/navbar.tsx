@@ -11,9 +11,10 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
-    { href: "/jobs", label: "Find Job Listings" },
-    { href: "/mock-interview", label: "Mock Interview" },
+    { href: "/job", label: "Find Job Listings" },
+    { href: "/interview/mock", label: "Mock Interview" },
     { href: "/posts", label: "Posts" },
+    { href: '/interview/live', label: 'live interview' }
   ];
 
   return (
