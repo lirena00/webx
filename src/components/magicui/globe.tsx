@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 "use client";
 import createGlobe, { type COBEOptions } from "cobe";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -6,7 +9,7 @@ import { cn } from "~/lib/utils";
 const GLOBE_CONFIG: COBEOptions = {
   width: 1000,
   height: 1000,
-  onRender: () => { },
+  onRender: () => {},
   devicePixelRatio: 2,
   phi: 0,
   theta: 0.3,
@@ -41,15 +44,15 @@ const GLOBE_CONFIG: COBEOptions = {
     { location: [37.7749, -122.4194], size: 0.1 }, // San Francisco
     { location: [35.6762, 139.6503], size: 0.08 }, // Tokyo
     { location: [22.3193, 114.1694], size: 0.07 }, // Hong Kong
-    { location: [52.5200, 13.4050], size: 0.06 }, // Berlin
+    { location: [52.52, 13.405], size: 0.06 }, // Berlin
     { location: [45.4215, -75.6972], size: 0.05 }, // Ottawa
     { location: [-22.9068, -43.1729], size: 0.08 }, // Rio de Janeiro
     { location: [31.2304, 121.4737], size: 0.09 }, // Shanghai
     { location: [59.9139, 10.7522], size: 0.04 }, // Oslo
     { location: [13.7563, 100.5018], size: 0.06 }, // Bangkok
     { location: [6.5244, 3.3792], size: 0.07 }, // Lagos
-    { location: [4.7100, -74.0721], size: 0.05 }, // Bogota
-    { location: [35.6892, 51.3890], size: 0.06 }, // Tehran
+    { location: [4.71, -74.0721], size: 0.05 }, // Bogota
+    { location: [35.6892, 51.389], size: 0.06 }, // Tehran
   ],
 };
 

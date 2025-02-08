@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { motion } from "motion/react";
 
 const fadeIn = {
