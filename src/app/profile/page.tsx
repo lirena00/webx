@@ -77,8 +77,6 @@ export default function PortfolioPage() {
             </div>
           </motion.div>
 
-          <GitHubContributions />
-
           {/* Skills */}
           <motion.div
             className="mt-8 flex flex-wrap gap-3"
@@ -101,7 +99,7 @@ export default function PortfolioPage() {
               </span>
             ))}
           </motion.div>
-
+          <GitHubContributions />
           {/* Projects */}
           <motion.div className="mt-12" {...fadeIn} transition={{ delay: 0.4 }}>
             <h2 className="mb-8 font-serif text-3xl text-[#F5F1EA]">
