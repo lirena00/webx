@@ -3,7 +3,7 @@ import { Package, Users, Cpu, Layers } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen bg-[#0A0A0A] [background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMEEwQTBBIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxMTExMTEiPjwvcmVjdD4KPC9zdmc+')]">
+    <main className="relative min-h-screen bg-[#0A0A0A]">
       {/* Hero Section */}
       <div className="mx-auto flex h-screen max-w-4xl flex-col items-center justify-center px-4 text-center">
         <h1 className="mb-6 font-serif text-6xl leading-tight text-[#F5F1EA] md:text-7xl">
