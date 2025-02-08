@@ -1,154 +1,120 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "motion/react";
 
-interface Job {
-  id: string;
-  title: string;
-  company: string;
-  logo: string;
-  skills: string[];
-  matchPercentage: number;
-  experienceLevel: string;
-  jobType: string;
-}
+import { Badge } from "~/components/ui/badge";
+import { Input } from "~/components/ui/input";
+import { Button } from "~/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 },
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const JobPage = () => {
-  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
-  const [selectedLevel, setSelectedLevel] = useState<string>("");
-  const [selectedType, setSelectedType] = useState<string>("");
-
-  const skills = ["React", "TypeScript", "Node.js", "Python", "AWS", "Docker"];
-  const levels = ["Entry", "Mid", "Senior"];
-  const types = ["Full-time", "Part-time", "Contract"];
-
-  const mockJobs: Job[] = [
-    {
-      id: "1",
-      title: "Senior Frontend Developer",
-      company: "TechCorp",
-      logo: "/tech-corp-logo.png",
-      skills: ["React", "TypeScript", "AWS"],
-      matchPercentage: 95,
-      experienceLevel: "Senior",
-      jobType: "Full-time",
-    },
-    // Add more mock jobs as needed
-  ];
-
   return (
-    <div className="min-h-screen p-8">
-      <div className="mx-auto max-w-7xl">
-        <h1 className="mb-12 font-serif text-5xl text-[#f5f5f0]">
-          Find Your Next Role
-        </h1>
+    <motion.main
+      className="min-h-screen py-6 md:py-12"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="container mx-auto px-4">
+        <div className="mx-auto max-w-4xl space-y-8 md:space-y-16">
+          {/* Header Section */}
+          <motion.header
+            className="space-y-4 text-center md:space-y-6"
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
+          >
+            <h1 className="font-serif text-2xl leading-tight text-[#F5F1EA] sm:text-3xl md:text-4xl lg:text-5xl">
+              Find your
+              <motion.span
+                className="italic text-[#FF6B6B]"
+                whileHover={{ scale: 1.05 }}
+              >
+                {" "}
+                perfect job{" "}
+              </motion.span>
+              with AI
+            </h1>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button className="rounded-full bg-[#C8BEB5] px-6 py-4 text-sm font-medium text-[#0A0A0A] transition-colors hover:bg-[#B8AEA5] md:px-8 md:py-6 md:text-base">
+                Find out best match
+              </Button>
+            </motion.div>
+          </motion.header>
 
-        {/* Filters Section */}
-        <div className="mb-12">
-          <div className="space-y-6">
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill) => (
-                <motion.button
-                  key={skill}
+          {/* Search Suggestions Section */}
+          <motion.div
+            className="space-y-4 text-center"
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
+          >
+            <p className="text-base text-[#C8BEB5] md:text-lg">
+              OR Try out our AI powered search
+            </p>
+            <motion.div
+              className="flex flex-wrap justify-center gap-2 md:gap-3"
+              variants={staggerContainer}
+              initial="initial"
+              animate="animate"
+            >
+              {[
+                "React Developer in Bangalore",
+                "App developer with AI skills",
+                "Full stack developer with 3 years of experience",
+              ].map((text, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() =>
-                    setSelectedSkills((prev) =>
-                      prev.includes(skill)
-                        ? prev.filter((s) => s !== skill)
-                        : [...prev, skill],
-                    )
-                  }
-                  className={`rounded-full px-4 py-2 text-sm ${
-                    selectedSkills.includes(skill)
-                      ? "bg-[#d4c5b5] text-black"
-                      : "bg-[#2a2a2a] text-[#f5f5f0]"
-                  } shadow-lg transition-all`}
                 >
-                  {skill}
-                </motion.button>
-              ))}
-            </div>
-
-            {/* Experience Level and Job Type Filters */}
-            <div className="flex gap-6">
-              <select
-                value={selectedLevel}
-                onChange={(e) => setSelectedLevel(e.target.value)}
-                className="rounded-lg bg-[#2a2a2a] px-4 py-2 text-[#f5f5f0]"
-              >
-                <option value="">Experience Level</option>
-                {levels.map((level) => (
-                  <option key={level} value={level}>
-                    {level}
-                  </option>
-                ))}
-              </select>
-
-              <select
-                value={selectedType}
-                onChange={(e) => setSelectedType(e.target.value)}
-                className="rounded-lg bg-[#2a2a2a] px-4 py-2 text-[#f5f5f0]"
-              >
-                <option value="">Job Type</option>
-                {types.map((type) => (
-                  <option key={type} value={type}>
-                    {type}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-        </div>
-
-        {/* Job Cards Grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {mockJobs.map((job) => (
-            <motion.div
-              key={job.id}
-              whileHover={{ y: -5 }}
-              className="rounded-xl bg-[#1a1a1a] p-6 shadow-xl"
-            >
-              <div className="mb-4 flex items-center gap-4">
-                <img
-                  src={job.logo}
-                  alt={job.company}
-                  className="h-12 w-12 rounded-full"
-                />
-                <div>
-                  <h3 className="font-serif text-xl text-[#f5f5f0]">
-                    {job.title}
-                  </h3>
-                  <p className="text-[#a0a0a0]">{job.company}</p>
-                </div>
-              </div>
-
-              <div className="mb-4">
-                <span className="italic text-red-400">
-                  {job.matchPercentage}% Match
-                </span>
-              </div>
-
-              <div className="mb-4 flex flex-wrap gap-2">
-                {job.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full bg-[#2a2a2a] px-2 py-1 text-xs text-[#f5f5f0]"
+                  <Badge
+                    variant="outline"
+                    className="cursor-pointer rounded-full bg-[#C8BEB5] px-3 py-1.5 text-xs font-normal text-[#0A0A0A] transition-colors hover:bg-[#B8AEA5] md:px-4 md:py-2 md:text-sm"
                   >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-
-              <button className="w-full rounded-lg bg-[#d4c5b5] py-2 text-black transition-colors hover:bg-[#c4b5a5]">
-                Apply Now
-              </button>
+                    {text}
+                  </Badge>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
+          </motion.div>
+
+          {/* Search Bar Section */}
+          <motion.div
+            className="mx-auto flex max-w-2xl px-4 md:px-0"
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
+          >
+            <Input
+              className="rounded-l-full border-r-0 text-sm text-[#C8BEB5] focus-visible:border-[#FF6B6B] md:text-base"
+              placeholder="Describe your perfect job..."
+            />
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button className="rounded-r-full bg-[#C8BEB5] px-4 text-sm font-medium text-[#0A0A0A] transition-colors hover:bg-[#B8AEA5] md:px-6 md:text-base">
+                <ArrowRight size={24} />
+              </Button>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.main>
   );
 };
 
