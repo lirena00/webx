@@ -23,7 +23,7 @@ export function Faq() {
         </AccordionItem>
 
         <AccordionItem value="item-2">
-          <AccordionTrigger className="text-5xl font-bold text-[#ff6b6b]">
+          <AccordionTrigger className="text-italic font-serif text-4xl font-bold text-[#ff6b6b]">
             Is it styled?
           </AccordionTrigger>
           <AccordionContent className="mt-4 text-3xl text-slate-100">
@@ -33,7 +33,7 @@ export function Faq() {
         </AccordionItem>
 
         <AccordionItem value="item-3">
-          <AccordionTrigger className="text-5xl font-bold text-[#ff6b6b]">
+          <AccordionTrigger className="text-italic font-serif text-4xl font-bold text-[#ff6b6b]">
             Is it animated?
           </AccordionTrigger>
           <AccordionContent className="mt-4 text-3xl text-slate-100">
