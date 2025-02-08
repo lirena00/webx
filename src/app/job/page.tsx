@@ -51,9 +51,11 @@ const JobPage = () => {
               with AI
             </h1>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="rounded-full bg-[#C8BEB5] px-6 py-4 text-sm font-medium text-[#0A0A0A] transition-colors hover:bg-[#B8AEA5] md:px-8 md:py-6 md:text-base">
-                Find out best match
-              </Button>
+              <a href="/job/search">
+                <Button className="rounded-full bg-[#C8BEB5] px-6 py-4 text-sm font-medium text-[#0A0A0A] transition-colors hover:bg-[#B8AEA5] md:px-8 md:py-6 md:text-base">
+                  Find out best match
+                </Button>
+              </a>
             </motion.div>
           </motion.header>
 
@@ -67,6 +69,7 @@ const JobPage = () => {
             <p className="text-base text-[#C8BEB5] md:text-lg">
               OR Try out our AI powered search
             </p>
+
             <motion.div
               className="flex flex-wrap justify-center gap-2 md:gap-3"
               variants={staggerContainer}
@@ -84,12 +87,14 @@ const JobPage = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Badge
-                    variant="outline"
-                    className="cursor-pointer rounded-full bg-[#C8BEB5] px-3 py-1.5 text-xs font-normal text-[#0A0A0A] transition-colors hover:bg-[#B8AEA5] md:px-4 md:py-2 md:text-sm"
-                  >
-                    {text}
-                  </Badge>
+                  <a href="/job/search">
+                    <Badge
+                      variant="outline"
+                      className="cursor-pointer rounded-full bg-[#C8BEB5] px-3 py-1.5 text-xs font-normal text-[#0A0A0A] transition-colors hover:bg-[#B8AEA5] md:px-4 md:py-2 md:text-sm"
+                    >
+                      {text}
+                    </Badge>{" "}
+                  </a>
                 </motion.div>
               ))}
             </motion.div>
@@ -107,9 +112,11 @@ const JobPage = () => {
               placeholder="Describe your perfect job..."
             />
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="rounded-r-full bg-[#C8BEB5] px-4 text-sm font-medium text-[#0A0A0A] transition-colors hover:bg-[#B8AEA5] md:px-6 md:text-base">
-                <ArrowRight size={24} />
-              </Button>
+              <a href="/job/search">
+                <Button className="rounded-r-full bg-[#C8BEB5] px-4 text-sm font-medium text-[#0A0A0A] transition-colors hover:bg-[#B8AEA5] md:px-6 md:text-base">
+                  <ArrowRight size={24} />
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
         </div>

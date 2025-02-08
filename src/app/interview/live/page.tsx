@@ -41,7 +41,7 @@ export default function InterviewPage() {
       <header className="flex items-center justify-between border-b border-[#2a2a2a] bg-[#1a1a1a] p-4">
         <div className="flex items-center gap-4">
           <Link
-            href="/"
+            href="/interview"
             className="flex items-center gap-2 rounded-lg px-3 py-2 text-[#C8BEB5] transition-colors hover:bg-[#2a2a2a]"
           >
             <ArrowLeft size={20} />
