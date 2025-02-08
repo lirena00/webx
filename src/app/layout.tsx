@@ -17,7 +17,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" className={GeistSans.variable}>
         <body>
-          <div className="min-h-screen w-full bg-black bg-grid-white/[0.2] relative">
+          <div className="min-h-screen w-full bg-black bg-grid-white/[0.1] relative">
             {/* Radial gradient overlay */}
             <div className="absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
             {/* Content container with navbar and footer */}
@@ -30,6 +30,7 @@ export default function RootLayout({
             </div>
           </div>
         </body>
+      </html>
     </ClerkProvider>
   );
 }
