@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { Package, Users, Cpu, Layers } from "lucide-react";
 
 export default function HomePage() {
   return (
+
+  
     <main className="relative min-h-screen bg-[#0A0A0A]">
       {/* Hero Section */}
       <div className="mx-auto flex h-screen max-w-4xl flex-col items-center justify-center px-4 text-center">
