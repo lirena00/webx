@@ -38,13 +38,7 @@ const JobPage = () => {
   ];
 
   return (
-    <div
-      className="min-h-screen bg-black p-8"
-      style={{
-        backgroundImage: 'url("/noise.png")',
-        backgroundBlendMode: "soft-light",
-      }}
-    >
+    <div className="min-h-screen p-8">
       <div className="mx-auto max-w-7xl">
         <h1 className="mb-12 font-serif text-5xl text-[#f5f5f0]">
           Find Your Next Role

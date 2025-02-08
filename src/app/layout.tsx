@@ -17,19 +17,18 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" className={GeistSans.variable}>
         <body>
-          <div className="min-h-screen w-full bg-black bg-grid-white/[0.2] relative">
+          <div className="bg-grid-white/[0.1] relative min-h-screen w-full bg-[#0A0A0A]">
             {/* Radial gradient overlay */}
-            <div className="absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+            <div className="pointer-events-none absolute inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
             {/* Content container with navbar and footer */}
-            <div className="relative z-10 flex min-h-screen flex-col">
+            <div className="relative z-10 flex min-h-screen flex-col gap-12">
               <Navbar />
-              <main className="flex-1">
-                {children}
-              </main>
+              <main className="mt-12 flex-1">{children}</main>
               <Footer />
             </div>
           </div>
         </body>
+      </html>
     </ClerkProvider>
   );
 }

@@ -14,22 +14,22 @@ const Navbar = () => {
           </Link>
 
           {/* Navigation Links - Center */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden items-center gap-6 md:flex">
             <Link
               href="/jobs"
-              className="text-gray-300 hover:text-white transition-colors"
+              className="text-gray-300 transition-colors hover:text-white"
             >
               Find Job Listings
             </Link>
             <Link
               href="/mock-interview"
-              className="text-gray-300 hover:text-white transition-colors"
+              className="text-gray-300 transition-colors hover:text-white"
             >
               Mock Interview
             </Link>
             <Link
               href="/posts"
-              className="text-gray-300 hover:text-white transition-colors"
+              className="text-gray-300 transition-colors hover:text-white"
             >
               Posts
             </Link>
@@ -47,19 +47,19 @@ const Navbar = () => {
         <div className="space-y-1 px-4 pb-3 pt-2">
           <Link
             href="/jobs"
-            className="block px-3 py-2 text-gray-300 hover:text-white transition-colors"
+            className="block px-3 py-2 text-gray-300 transition-colors hover:text-white"
           >
             Find Job Listings
           </Link>
           <Link
             href="/mock-interview"
-            className="block px-3 py-2 text-gray-300 hover:text-white transition-colors"
+            className="block px-3 py-2 text-gray-300 transition-colors hover:text-white"
           >
             Mock Interview
           </Link>
           <Link
             href="/posts"
-            className="block px-3 py-2 text-gray-300 hover:text-white transition-colors"
+            className="block px-3 py-2 text-gray-300 transition-colors hover:text-white"
           >
             Posts
           </Link>
