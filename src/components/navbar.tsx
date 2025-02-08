@@ -4,9 +4,12 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import HeaderProfileBtn from "./HeaderProfilebtn";
+import { SignInButton, SignOutButton, useAuth } from "@clerk/nextjs";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { isSignedIn } = useAuth();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -14,7 +17,7 @@ const Navbar = () => {
     { href: "/job", label: "Find Job Listings" },
     { href: "/interview/mock", label: "Mock Interview" },
     { href: "/posts", label: "Posts" },
-    { href: '/interview/live', label: 'live interview' }
+    { href: "/interview/live", label: "live interview" },
   ];
 
   return (
@@ -53,6 +56,25 @@ const Navbar = () => {
           {/* Profile Section */}
           <div className="flex items-center gap-4">
             <HeaderProfileBtn />
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden md:block"
+            >
+              {isSignedIn ? (
+                <SignOutButton>
+                  <button className="rounded-lg bg-red-500 px-4 py-2 text-white hover:bg-red-600">
+                    Sign Out
+                  </button>
+                </SignOutButton>
+              ) : (
+                <SignInButton>
+                  <button className="rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+                    Sign In
+                  </button>
+                </SignInButton>
+              )}
+            </motion.div>
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
@@ -90,6 +112,22 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
+              {/* Mobile Auth Button */}
+              <motion.div whileTap={{ scale: 0.95 }} className="mt-2">
+                {isSignedIn ? (
+                  <SignOutButton>
+                    <Button className="w-full rounded-lg bg-[#ff6b6b] text-white">
+                      Sign Out
+                    </Button>
+                  </SignOutButton>
+                ) : (
+                  <SignInButton>
+                    <Button className="w-full rounded-lg bg-[#ff6b6b] text-white">
+                      Sign In
+                    </Button>
+                  </SignInButton>
+                )}
+              </motion.div>
             </div>
           </motion.div>
         )}
