@@ -38,5 +38,9 @@ export function Reviews() {
       src: "/5.jpeg",
     },
   ];
-  return <AnimatedTestimonials testimonials={testimonials} />;
+  return (
+    <AnimatedTestimonials
+      testimonials={testimonials}
+    />
+  );
 }
